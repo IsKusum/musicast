@@ -8,7 +8,7 @@ body{
 }
 
 nav{
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 nav ul{
@@ -36,39 +36,41 @@ nav ul li{
 }
 
 .container{
-    min-height: 72vh;
+    min-height: 70vh;
     background-color: black;
     color: white;
    font-family: 'Varela Round', sans-serif;
    display: flex;
    margin: 23px auto;
-   width: 70%;
+   width: 80%;
    border-radius: 12px;
-   padding: 34px;
-   background-image: url('images/Capture2.JPG');
+   padding: 24px;
+   background-image: url('images/Capture23.JPG');
 }
 
 .bottom{
     position: sticky;
-    bottom: 0;
-    height: 130px;
-    background-color: black;
-    color: white;
-    display: flex;
+    height: 100px;
+    width:100%;
+    background-color: antiquewhite;
+    color: black;
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
 }
 
 .icons{
+    text-align: center;
     margin-top: 14px; 
+    font-size: 200%;
 }
-.icons i{
+.icons {
     cursor: pointer;
 }
 
 #myProgressBar{
-    width: 80vw; 
+    width: 82vw; 
     cursor: pointer;
 }
 
@@ -79,8 +81,8 @@ nav ul li{
 .songItem{
     height: 50px;
     display: flex;
+    width:150%;
     background-color: white;
-    
     color: black;
     margin: 12px 0;
     justify-content: space-between;
@@ -93,9 +95,8 @@ nav ul li{
     margin: 0 23px;
     border-radius: 34px;
 }
-
 .timestamp{
-    margin: 0 23px;
+    margin: 0 23px  ;
 }
 
 .timestamp i{
@@ -118,20 +119,31 @@ nav ul li{
       background-color: red;
     }
   }
-  .dark-mode{
+  .light-mode{
     background-color: black;
     color: white;
+  }
+  .light-mode .container{
     background-image: url(images/nostalgia.jpg);
   }
+  .light-mode .bottom{
+    background-color: black;
+    color: antiquewhite;
+  }
   footer{
-    margin-top: 50%;
+    margin-top:90%;
     margin-bottom:0%;
   }
-  button{
-        position: absolute;
-        top:50%;
-        background-color:#0a0a23;
-        color: #fff;
-        border:none;
-        border-radius:10px;
+  .button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
   }
+  
