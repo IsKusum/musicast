@@ -19,7 +19,8 @@ let songs = [
   masterPlay.addEventListener('click', ()=>{
     if(audioElement.paused || audioElement.currentTime<=0){
       audioElement.play();
-      masterPlay.classList.remove('fa-sharp fa-regular fa-circle-pause');
+      masterPlay.classList.add("fa-circle-pause")
+      masterPlay.classList.remove('fa-circle-play');
     }
     else{
       audioElement.pause();
@@ -38,27 +39,49 @@ let songs = [
   })
   const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-        element.classList.remove('fa-pause-circle');
-        element.classList.add('fa-play-circle');
+        element.classList.add('fa-circle-pause');
+        element.classList.remove('fa-circle-play');
     })
 }
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>{
   element.addEventListener('click', (e) =>{
   makeAllPlays();
   songIndex =parseInt(e.target.id);
-  e.target.classList.add('fa-pause-circle');
-  e.target.classList.remove('fa-play-circle');
+  e.target.classList.add('fa-circle-pause');
+  e.target.classList.remove('a-circle-play');
   audioElement.src= `songs/${songIndex+1}.mp3`;
   masterSongName.innerText=songs[songIndex].songName;
   audioElement.currentTime=0;
   audioElement.play();
-  masterPlay.classList.add("fa-pause-circle");
-  masterPlay.classList.remove("fa-play-circle");
+  masterPlay.classList.add('fa-circle-pause');
+  masterPlay.classList.remove('fa-circle-play');
   })
 })
 document.getElementById('next').addEventListener('click' , ()=>{
 if(songIndex>=4){
   songIndex=0;
 }
+else{
+  songIndex += 1;
+}
+audioElement.src = `songs/${songIndex+1}.mp3`;
+masterSongName.innerText = songs[songIndex].songName;
+audioElement.currentTime = 0;
+audioElement.play();
+masterPlay.classList.add('fa-circle-pause');
+masterPlay.classList.remove('fa-circle-play');
 })
+document.getElementById('previous').addEventListener('click', () =>{
+  if(songIndex<=0){
+    songIndex=0;
+  }
+  else{
+    songIndex -= 1;
+  }
+  audioElement.src = `songs/${songIndex+1}.mp3`;
+  masterSongName.innerText = songs[songIndex].songName;
+  audioElement.currentTime = 0;
   audioElement.play();
+  masterPlay.classList.add('fa-circle-pause');
+ masterPlay.classList.remove('fa-circle-play');
+})
