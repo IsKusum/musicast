@@ -36,4 +36,29 @@ let songs = [
   myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
   })
+  const makeAllPlays = ()=>{
+    Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+        element.classList.remove('fa-pause-circle');
+        element.classList.add('fa-play-circle');
+    })
+}
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>{
+  element.addEventListener('click', (e) =>{
+  makeAllPlays();
+  songIndex =parseInt(e.target.id);
+  e.target.classList.add('fa-pause-circle');
+  e.target.classList.remove('fa-play-circle');
+  audioElement.src= `songs/${songIndex+1}.mp3`;
+  masterSongName.innerText=songs[songIndex].songName;
+  audioElement.currentTime=0;
+  audioElement.play();
+  masterPlay.classList.add("fa-pause-circle");
+  masterPlay.classList.remove("fa-play-circle");
+  })
+})
+document.getElementById('next').addEventListener('click' , ()=>{
+if(songIndex>=4){
+  songIndex=0;
+}
+})
   audioElement.play();
