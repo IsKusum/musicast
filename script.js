@@ -21,6 +21,8 @@ let songs = [
       audioElement.play();
       masterPlay.classList.add("fa-circle-pause")
       masterPlay.classList.remove('fa-circle-play');
+      masterPlay.classList.add("fa-circle-pause");
+      masterPlay.classList.remove("fa-circle-play");
     }
     else{
       audioElement.pause();
