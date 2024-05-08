@@ -1,6 +1,6 @@
 # Musicast
 
-Musicast is a Spotify clone website that allows to play a curated collection of nostalgic tunes from various cartoons. For now, i have added only 10 songs.
+Musicast is a website that allows to play a curated collection of nostalgic tunes from various cartoons. For now, i have added only 10 songs.
 
 ## Features
 
